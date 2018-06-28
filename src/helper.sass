@@ -1,0 +1,64 @@
+$colors: $dark, $light, $gray, $blue, $deep-blue, $red, $yellow, $green
+$names: 'dark', 'light', 'gray', 'blue', 'deep-blue', 'red', 'yellow', 'green'
+
+@for $i from 1 through length($colors)
+  .text-#{nth($names, $i)}
+    color: nth($colors, $i)
+
+  .bg-#{nth($names, $i)}
+    background: nth($colors, $i)
+
+=clearfix
+  &::after
+    content: ' '
+    display: table
+    clear: both
+
+.text-right
+  text-aligh: right
+
+.text-left
+  text-align: left
+
+.p1rem
+  padding: 1rem
+
+.m1rem
+  margin: 1rem
+
+.p51rem
+  padding: .5rem 1rem
+
+.m51rem
+  margin: .5rem 1rem
+
+.f8
+  font-size: .8rem
+.f9
+  font-size: .9rem
+.f1
+  font-size: 1rem
+.f12
+  font-size: 1.2rem
+.f14
+  font-size: 1.4rem
+
+.text-ellipsis
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+.ab-center
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+
+.fx-center
+  display: flex
+  align-items: center
+  justify-content: center
+
+.clearfix
+  +clearfix
+

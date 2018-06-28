@@ -1,0 +1,78 @@
+$colors: ('green': $green, 'blue': $blue, 'yellow': $yellow, 'red': $red)
+
+// 图标兼容
+.btn
+  i.icon
+    display: inline-block
+    width: .9rem
+    &.right
+      padding-left: .5rem
+    &.left
+      padding-right: .3rem
+  &.large i.icon
+    &.right
+      padding-left: .7rem
+    &.left
+      padding-right: 1.3rem
+.btn
+  color: $gray
+  border: 1px solid $light
+  outline: none
+  padding: .5rem 1rem
+  cursor: default
+  border-radius: 4px
+  font-size: .8rem
+  display: inline-block
+  &.block
+    display: block
+
+  @at-root a#{&}
+    cursor: pointer
+
+  &:hover
+    color: darken($gray, 20%)
+    border: 1px solid darken($light, 5%)
+
+
+  &.large
+    font-size: .9rem
+    padding: .7rem 1.2rem
+  &.small
+    font-size: .7rem
+    padding: .3rem .7rem
+
+  &.text
+    border: none
+
+  // 颜色
+  // &.green
+  //   color: #fff
+  //   background: $green
+  //   border-color: $green
+  //   &:hover
+  //     background: darken($green, 4%)
+  //   &.outline
+  //     color: $green
+  //     background: transparent
+  //     border-color: $green
+  //     transition: background .2s
+  //     &:hover
+  //       background: $green
+  //       color: #fff
+
+  @each $name, $color in $colors
+    &.#{$name}
+      color: #fff
+      background: $color
+      border-color: $color
+      &:hover
+        background: darken($color, 4%)
+      &.outline
+        color: $color
+        background: transparent
+        border-color: $color
+        transition: background .2s
+        &:hover
+          background: $color
+          color: #fff
+
