@@ -1,0 +1,96 @@
+@import './vars/_jeet.sass'
+@import 'jeet/scss/_functions.scss'
+@import 'jeet/scss/index.scss'
+
+@import './vars/_query-size.sass'
+@import './fns/_media-query.sass'
+
+#container
+  padding-right: 15px
+  padding-left: 15px
+  margin-right: auto
+  margin-left: auto
+
+.container
+  width: 100%
+  @extend #container
+  @media screen and (min-width: $media-size-1)
+    max-width: $media-size-box-1
+  @media screen and (min-width: $media-size-2)
+    max-width: $media-size-box-2
+  @media screen and (min-width: $media-size-3)
+    max-width: $media-size-box-3
+  @media screen and (min-width: $media-size-4)
+    max-width: $media-size-box-4
+  &-fluid
+    width: 100%
+    @extend #container
+
+.fa-gird
+  +clearfix
+  @for $i from 1 through 12
+    .is-#{$i}
+      +column($i/12)
+      @for $j from 1 through 12
+        &.offset-#{$j}
+          margin-left: percentage($j / 12)
+  &.span
+    @for $i from 1 through 12
+      .is-#{$i}
+        +span($i/12)
+
+.fl-gird
+  display: flex
+  flex-wrap: wrap
+  &.row
+    flex-wrap: no-wrap
+  &.kj
+    flex-direction: row-reverse
+  &.jn
+    flex-direction: column
+  &.nj
+    flex-direction: column-reverse
+  &.u
+    justify-content: center
+  &.t
+    justify-content: flex-start
+  &.o
+    justify-content: flex-right
+  &.tuo
+    justify-content: space-between
+  &.yui
+    justify-content: space-around
+
+  @for $i from 1 through 12
+    .is-#{$i}
+      width: percentage($i / 12)
+      @for $j from 1 through 12
+        &.offset-#{$j}
+          margin-left: percentage($j / 12)
+
+// 响应式
+
+@for $i from 1 through 12
+
+  .fa-gird .is-media1-#{$i},
+  .fl-gird .is-media1-#{$i}
+    +media1
+      width: percentage($i / 12)
+
+  .fa-gird .is-media2-#{$i},
+  .fl-gird .is-media2-#{$i}
+    +media2
+      width: percentage($i / 12)
+
+  .fa-gird .is-media3-#{$i},
+  .fl-gird .is-media3-#{$i}
+    +media3
+      width: percentage($i / 12)
+
+  .fa-gird .is-media4-#{$i},
+  .fl-gird .is-media4-#{$i}
+    +media4
+      width: percentage($i / 12)
+
+
+

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel index.html --no-cache"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +13,8 @@
     "node-sass": "^4.9.0",
     "parcel-bundler": "^1.9.3",
     "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "jeet": "^7.2.0"
   }
 }
