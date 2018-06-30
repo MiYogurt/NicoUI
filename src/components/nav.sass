@@ -1,0 +1,103 @@
+$nav-height: 60px !default
+$hover-bg: #f7fbff !default
+$default-bg: #fff !default
+$link-color: $blue !default
+$left-right-padding: 1rem !default
+.nav
+  height: $nav-height
+  display: flex
+  align-items: center
+  user-select: none
+  // 默认只显示 logo
+  .control
+    display: flex
+    background: $default-bg
+    align-items: center
+    flex-shrink: 0
+    z-index: 2
+    .list
+      display: none
+  a.link
+    display: inline-block
+    line-height: $nav-height
+    height: $nav-height
+    padding: 0 $left-right-padding
+    color: $link-color
+    cursor: pointer
+    &:hover
+      background: $hover-bg
+      color: $link-color
+  .logo
+    background: transparent
+    line-height: 0
+    margin-right: $left-right-padding
+  .content
+    display: flex
+    width: 100%
+    .right
+      margin-left: auto
+
+// 控制按钮
+.nav-control
+  display: none
+  line-height: $nav-height
+  height: $nav-height
+  width: $nav-height
+  text-align: center
+  padding: 0 $left-right-padding
+  position: relative
+  margin-left: auto
+  cursor: pointer
+  span
+    height: 2px
+    width: 15px
+    background: #333
+    position: absolute
+    transition: transform ease-out .086s
+    top: calc(50% - 1px)
+    &:first-of-type
+      top: calc(50% - 6px)
+    &:last-of-type
+      top: calc(50% + 4px)
+
+// 按钮变形
+.nav.active
+  .nav-control
+    span
+      display: none
+      &:first-of-type
+        transform: translateY(5px) rotate(45deg)
+        display: block
+      &:last-of-type
+        transform: translateY(-5px) rotate(-45deg)
+        display: block
+        transform-origin: center;
+
+@media screen and (max-width: $media-size-3)
+  .nav
+    position: relative
+    .control
+      flex-basis: 100%
+      .list,
+      .nav-control
+        display: block
+    .content
+      display: block
+      z-index: 1
+      position: absolute
+      background: $default-bg
+      padding: .5rem 0
+      top: 100%
+      left: 0
+      right: 0
+      transform: translateY(-10%)
+      transition: transform ease-out .09s, opacity .07s
+      visibility: hidden
+      opacity: 0
+    &.active
+      .content
+        transform: translateY(0%)
+        visibility: visible
+        opacity: 1
+        .link
+          display: block
