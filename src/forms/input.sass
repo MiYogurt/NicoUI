@@ -1,0 +1,74 @@
+$colors: ('green': $green, 'blue': $blue, 'yellow': $yellow, 'red': $red)
+
+.field
+  display: block
+  margin-bottom: 1rem
+  label
+    float: left
+    width: 10%
+    text-align: right
+    font-size: .8rem
+    margin-top: .4rem
+    color: $gray
+    font-weight: 600
+  input
+    display: inline-block
+    width: 70%
+    margin-left: 3%
+    outline: none
+    height: 30px
+    line-height: 30px
+    font-size: .8rem
+    padding: .5rem
+    border: 1px solid $light
+    border-radius: .2rem
+    &:focus,
+    &:hover
+      border-color: darken($light, 30%)
+    @each $name, $color in $colors
+      &.#{$name}
+        border-color: $color
+        &:focus,
+        &:hover
+          border-color: darken($color, 10%)
+    &.static
+      border-color: transparent
+      padding: .5rem 0
+
++media1
+  .field label
+    display: block
+    float: none
+    width: 100%
+    text-align: left
+    margin-bottom: .5rem
+  .field input
+    width: 100%
+    margin-left: 0
+
+// 带图标的版本
+.field .control
+  position: relative
+  height: 30px
+  input
+    width: 100%
+    position: absolute
+    left: 0
+    right: 0
+    margin-left: 0
+    padding: .5rem 1.5rem
+    &:hover ~ i,
+    &:focus ~ i
+      color: $gray
+  i
+    z-index: 2
+    color: lighten($gray, 30%)
+  i.left
+    position: absolute
+    left: .5rem
+    top: .2rem
+  .right
+    position: absolute
+    right: .5rem
+    top: .2rem
+
