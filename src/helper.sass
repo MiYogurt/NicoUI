@@ -1,6 +1,11 @@
 $colors: $dark, $light, $gray, $blue, $deep-blue, $red, $yellow, $green
 $names: 'dark', 'light', 'gray', 'blue', 'deep-blue', 'red', 'yellow', 'green'
 
+=text-over-hidden
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
 @for $i from 1 through length($colors)
   .text-#{nth($names, $i)}
     color: nth($colors, $i)
@@ -44,9 +49,7 @@ $names: 'dark', 'light', 'gray', 'blue', 'deep-blue', 'red', 'yellow', 'green'
   font-size: 1.4rem
 
 .text-ellipsis
-  white-space: nowrap
-  overflow: hidden
-  text-overflow: ellipsis
+  +text-over-hidden
 
 .ab-center
   position: absolute

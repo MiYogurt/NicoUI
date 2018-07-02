@@ -1,0 +1,30 @@
+.select
+  position: relative
+  max-width: 100%
+  @each $name, $color in $colors
+    &.#{$name} select
+      border-color: $color
+      background: $color
+      color: white
+    &.#{$name}::after
+      border-color: white
+  select
+    -webkit-appearance: none
+    -moz-appearance: none
+    border: 1px solid $light
+    padding: .5rem 2rem .5rem .5rem
+    display: inline-block
+    outline: none
+    margin: .5rem 0
+  &::after
+    border: 2px solid $gray
+    border-left: 0
+    border-top: 0
+    content: ' '
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    transform: rotate(45deg);
+    position: relative
+    left: -25px
+    top: -3px

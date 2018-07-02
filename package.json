@@ -1,21 +1,21 @@
 {
-  "name": "NicoUI",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "parcel index.html --no-cache",
-    "docs": "parcel build index.html -d docs --public-url ./"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "node-sass": "^4.9.0",
-    "parcel-bundler": "^1.9.3",
-    "typescript": "^2.9.2"
-  },
-  "dependencies": {
-    "jeet": "^7.2.0"
-  }
+    "name": "NicoUI",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "parcel index.html",
+        "docs": "parcel build index.html -d docs --public-url ./"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "node-sass": "^4.9.0",
+        "parcel-bundler": "^1.9.3",
+        "typescript": "^2.9.2"
+    },
+    "dependencies": {
+        "jeet": "^7.2.0"
+    }
 }

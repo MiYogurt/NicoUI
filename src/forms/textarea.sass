@@ -1,0 +1,16 @@
+textarea
+  resize: vertical
+  width: 100%
+  border: 1px solid $light
+  outline: none
+  min-height: 7rem
+  padding: .5rem
+  &:focus,
+  &:hover
+    border-color: darken($light, 10%)
+  @each $name, $color in $colors
+    &.#{$name}
+      border-color: $color
+      &:focus,
+      &:hover
+        border-color: darken($color, 10%)

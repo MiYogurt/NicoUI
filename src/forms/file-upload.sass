@@ -1,0 +1,34 @@
+.file
+  @each $name, $color in $colors
+    &.#{$name}
+      label:first-of-type
+        color: white
+        background: $color
+        &:hover
+          background: darken($color, 2%)
+  label:first-of-type
+    display: inline-block
+    width: 12rem
+    text-align: center
+    font-size: .9rem
+    color: $gray
+    background: $light
+    padding: .5rem 2rem
+    cursor: pointer
+    &:hover
+      background: darken($light, 2%)
+    i
+      margin-right: .5rem
+  .file-name
+    display: block
+    font-size: .8rem
+    width: 12rem
+    border: 1px solid $light
+    color: lighten($gray, 20%)
+    padding: .2rem
+    +text-over-hidden
+  input[type="file"]
+    display: inline-block
+    width: 0.1px
+    height: 0.1px
+    opacity: 0
