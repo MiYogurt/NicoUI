@@ -1,0 +1,45 @@
+input[type="radio"]
+  z-index: 1
+  position: absolute
+  width: 1.2rem
+  height: 1.2rem
+  opacity: 0
+  margin: -3px 4px
+  + label.circle
+    border-radius: 50%
+    border: 1px solid lighten($gray, 40%)
+    width: 1.2rem
+    height: 1.2rem
+    display: inline-block
+    background: #fff
+    margin: -3px 4px
+    &:after
+      content: ' '
+      width: .6rem
+      height: .6rem
+      display: block
+      margin: 4px 4.2px
+      background: $blue
+      border-radius: 50%
+
+      transition: transform cubic-bezier(0.68, -0.51, 0.46, 1.49) .3s
+      transform-origin: center
+      transform: scale(0)
+
+      // visibility: hidden
+  &:checked + label.circle:after
+    // visibility: visible
+    // animation: bounceIn .2s
+
+    transform: scale(1)
+  &:disabled ~ label
+    opacity: .6
+
+// @keyframes bounceIn
+//   0%
+//     transform: scale(0)
+//   75%
+//     transform: scale(1.1)
+//   100%
+//     transform: scale(1)
+

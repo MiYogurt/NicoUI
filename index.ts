@@ -1,3 +1,5 @@
+import './index.sass'
+
 const toggleClass = (
   clickSelector: string,
   addClassSelector: string,
@@ -11,3 +13,11 @@ const toggleClass = (
 }
 
 toggleClass('.nav .nav-control', '.nav', 'active')
+
+declare var module: any
+
+if (module.hot) {
+  module.hot.accept(function() {
+    window.location.reload()
+  })
+}
