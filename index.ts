@@ -1,5 +1,3 @@
-import './index.sass'
-
 const toggleClass = (
   clickSelector: string,
   addClassSelector: string,
