@@ -29,7 +29,7 @@
 .fa-gird
   +clearfix
   @for $i from 1 through 12
-    .is-#{$i}
+    & > .is-#{$i}
       +column($i/12)
       @for $j from 1 through 12
         &.offset-#{$j}
@@ -62,7 +62,7 @@
     justify-content: space-around
 
   @for $i from 1 through 12
-    .is-#{$i}
+    & > .is-#{$i}
       width: percentage($i / 12)
       @for $j from 1 through 12
         &.offset-#{$j}
