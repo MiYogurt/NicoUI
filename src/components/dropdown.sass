@@ -1,0 +1,56 @@
+=triangle
+  position: absolute
+  width: 10px
+  height: 10px
+  content: ' '
+  border-left: 5px solid transparent
+  border-top: 5px solid transparent
+  border-right: 5px solid transparent
+  border-bottom: 5px solid transparent
+.dropdown
+  position: relative
+  display: inline-block
+  .trigger > *
+    margin: 0
+  .content
+    position: absolute
+    display: none
+    padding: .5rem 1rem
+    font-size: .7rem
+    left: 0%
+    top: calc(100% + 7px)
+    min-width: max-content
+    z-index: 99
+    background: rgba(0,0,0,.98)
+    color: #fff
+    &:after
+      +triangle
+      border-bottom-color: rgba(0,0,0,.99)
+      left: calc(50% - 10px)
+      top: -10px
+  &.left .content
+    right: calc(100% + 7px)
+    left: auto
+    top: 0
+    &:after
+      right: -10px;
+      transform: rotate(90deg);
+      top: calc(50% - 5px);
+      left: auto
+  &.right .content
+    left: calc(100% + 7px)
+    top: 0
+    &:after
+      left: -10px;
+      transform: rotate(270deg);
+      top: calc(50% - 5px);
+  &.top .content
+    bottom: calc(100% + 7px)
+    top: auto
+    &:after
+      left: calc(50% - 10px)
+      transform: rotate(180deg)
+      bottom: -10px
+      top: auto
+  &.hover:hover .content
+    display: block

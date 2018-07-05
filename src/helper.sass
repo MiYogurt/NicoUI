@@ -6,6 +6,11 @@ $names: 'dark', 'light', 'gray', 'blue', 'deep-blue', 'red', 'yellow', 'green'
   overflow: hidden
   text-overflow: ellipsis
 
+=flex-center
+  display: flex
+  align-items: center
+  justify-content: center
+
 @for $i from 1 through length($colors)
   .text-#{nth($names, $i)}
     color: nth($colors, $i)
@@ -72,9 +77,7 @@ $names: 'dark', 'light', 'gray', 'blue', 'deep-blue', 'red', 'yellow', 'green'
   transform: translate(-50%,-50%)
 
 .fx-center
-  display: flex
-  align-items: center
-  justify-content: center
+  +flex-center
 
 .clearfix
   +clearfix

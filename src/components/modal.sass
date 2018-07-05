@@ -1,0 +1,28 @@
+=all
+  left: 0
+  right: 0
+  bottom: 0
+  top: 0
+.modal
+  position: fixed
+  +flex-center
+  +all
+  z-index: -200
+  display: none
+  &.show
+    z-index: 99
+    display: flex
+  .bg
+    position: absolute
+    z-index: -1
+    +all
+    background: rgba(0,0,0,.7)
+  .content
+    background: #fff
+    padding: 1rem 2rem
+  .close
+    @extend #close-icon
+    position: absolute
+    right: 40px
+    top: 40px
+    cursor: pointer

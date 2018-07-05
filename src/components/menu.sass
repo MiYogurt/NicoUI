@@ -1,0 +1,46 @@
+.menu
+  padding: 1rem
+  .title
+    font-weight: 900
+    display: block
+    margin: .5rem 0
+    cursor: pointer
+    position: relative
+    user-select: none
+    &:hover
+      color: $blue
+      &::after
+        border-color: $blue
+    &::after
+      position: absolute
+      right: 5px
+      top: 5px
+      content: ''
+      display: block
+      width: 8px
+      height: 8px
+      border-left: 3px solid $gray
+      border-bottom: 3px solid $gray
+      border-radius: 2px
+      transform: rotate(-45deg)
+      transition: all .5s
+      &:hover
+    &.show::after
+      top: 10px
+      transform: rotate(135deg)
+
+  .list
+    max-height: 0
+    overflow: hidden
+    font-size: .9rem
+    color: $gray
+    padding-left: .5rem
+    transition: max-height cubic-bezier(0, 0.67, 0.3, 0.75) .5s
+    &.show
+      max-height: 300px
+    .item
+      line-height: 2.2
+      display: block
+      color: darken($gray, 20%)
+      &:hover
+        color: $blue

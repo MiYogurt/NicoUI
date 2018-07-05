@@ -1,29 +1,12 @@
 $colors: ('green': $green, 'blue': $blue, 'yellow': $yellow, 'red': $red)
 
-.notification
-  background: $light
-  padding: 1rem
-  border-radius: 2px
-  margin: .5rem 0
-  @each $name, $color in $colors
-    &.#{$name}
-      background-color: $color
-      color: #fff
-      a
-        color: lighten($color, 20%)
-        border-bottom: 1px solid lighten($color, 20%)
-.delete
+#close-icon
   background: rgba(0,0,0, .2)
   width: 20px
   height: 20px
   border: none
-  position: relative
   outline: none
   border-radius: 50%
-  float: right
-  top: -7px
-  right: -7px
-  cursor: pointer
   &:hover
     background: rgba(0,0,0, .5)
   &:after,
@@ -41,3 +24,23 @@ $colors: ('green': $green, 'blue': $blue, 'yellow': $yellow, 'red': $red)
   &:before
     transform: translateX(-50%) translateY(-50%) rotate(-45deg);
     transform-origin: center center;
+
+.notification
+  background: $light
+  padding: 1rem
+  border-radius: 2px
+  margin: .5rem 0
+  @each $name, $color in $colors
+    &.#{$name}
+      background-color: $color
+      color: #fff
+      a
+        color: lighten($color, 20%)
+        border-bottom: 1px solid lighten($color, 20%)
+
+.delete
+  @extend #close-icon
+  position: relative
+  float: right
+  top: -7px
+  right: -7px
